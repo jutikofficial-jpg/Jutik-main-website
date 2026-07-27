@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jutik — Rooted in Nature, Designed for Mindful Living</title>
+<meta name="description" content="Jutik is a modern sustainable lifestyle brand from Kolkata — jute tiffin bags, gift hampers and mindful everyday carry, crafted naturally.">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L3FJDL03FF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L3FJDL03FF');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=Kalam:wght@400;700&family=Quicksand:wght@500;600;700&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --cream:#F6F1E7;
+  --cream-2:#EFE7D6;
+  --beige:#D8C6A3;
+  --brown:#6B4A30;
+  --forest:#33422C;
+  --charcoal:#2A2621;
+  --mustard:#C69A45;
+  --mustard-soft:#DDBE85;
+  --white:#FFFDF8;
+
+  --serif:'Bebas Neue', sans-serif;
+  --sans:'Syne', sans-serif;
+  --script:'Kalam', cursive;
+  --beng:'Hind Siliguri', sans-serif;
+  --logo-font:'Quicksand', sans-serif;
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--cream);
+  color:var(--charcoal);
+  font-family:var(--sans);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:var(--sans);cursor:pointer;border:none;background:none}
+::selection{background:var(--mustard-soft);color:var(--charcoal)}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-thumb{background:var(--beige);border-radius:3px}
+
+.eyebrow{
+  font-family:var(--sans);font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--brown);font-weight:500;
+}
+.serif-italic{font-family:var(--script);font-weight:400}
+.container{max-width:1240px;margin:0 auto;padding:0 32px}
+.rule{width:100%;height:1px;background:rgba(42,38,33,.12)}
+
+/* ---------- grain overlay ---------- */
+.grain{
+  position:fixed;inset:0;pointer-events:none;z-index:998;opacity:.035;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- scroll progress ---------- */
+.scroll-progress{position:fixed;top:0;left:0;height:2px;background:var(--mustard);z-index:1001;width:0%}
+
+/* ---------- cursor ---------- */
+.cursor-dot{
+  position:fixed;top:0;left:0;width:8px;height:8px;border-radius:50%;background:var(--brown);
+  pointer-events:none;z-index:1000;transform:translate(-50%,-50%);transition:transform .15s ease, opacity .2s;
+  mix-blend-mode:normal;
+}
+.cursor-ring{
+  position:fixed;top:0;left:0;width:34px;height:34px;border-radius:50%;border:1px solid var(--brown);
+  pointer-events:none;z-index:1000;transform:translate(-50%,-50%);transition:width .25s,height .25s,opacity .25s,transform .05s linear;
+  opacity:.5;
+}
+@media(hover:none){.cursor-dot,.cursor-ring{display:none}}
+
+/* ---------- mobile scroll firefly (cursor-vibe for touch devices) ---------- */
+.scroll-track{display:none}
+@media(hover:none){
+  .scroll-track{
+    display:block;position:fixed;top:12%;bottom:12%;right:10px;width:2px;z-index:999;
+    background:linear-gradient(rgba(107,74,48,.12), rgba(107,74,48,.12));border-radius:2px;
+    pointer-events:none;
+  }
+  .scroll-firefly{
+    position:absolute;left:50%;top:0;width:12px;height:12px;margin-left:-5px;border-radius:50%;
+    background:var(--mustard);box-shadow:0 0 0 5px rgba(198,154,69,.22), 0 0 14px rgba(198,154,69,.5);
+    transition:top .08s linear;
+  }
+  .scroll-firefly::after{
+    content:'';position:absolute;inset:-7px;border-radius:50%;border:1px solid rgba(107,74,48,.35);
+    animation:fireflyPulse 2.2s ease-in-out infinite;
+  }
+}
+@keyframes fireflyPulse{0%,100%{transform:scale(.85);opacity:.7}50%{transform:scale(1.25);opacity:.2}}
+
+/* ---------- sparkle trail (desktop cursor, brand-toned genz touch) ---------- */
+.sparkle{
+  position:fixed;top:0;left:0;width:5px;height:5px;pointer-events:none;z-index:999;
+  background:var(--mustard);border-radius:50%;opacity:.9;
+  animation:sparkleFade .7s ease-out forwards;
+}
+@keyframes sparkleFade{
+  0%{transform:translate(-50%,-50%) scale(1);opacity:.9}
+  100%{transform:translate(-50%,-50%) scale(0) translateY(-14px);opacity:0}
+}
+@media(hover:none){.sparkle{display:none}}
+
+/* ---------- sticker badges — playful, in-palette accents ---------- */
+.sticker{
+  position:absolute;font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.02em;
+  background:var(--cream);border:1.5px dashed var(--brown);color:var(--forest);
+  padding:7px 13px;border-radius:100px;white-space:nowrap;z-index:5;
+  box-shadow:0 6px 14px rgba(42,38,33,.12);
+}
+.sticker.tilt-left{transform:rotate(-6deg)}
+.sticker.tilt-right{transform:rotate(5deg)}
+@media(max-width:760px){.sticker{font-size:10.5px;padding:5px 10px}}
+
+/* ---------- announcement strip ---------- */
+.strip{
+  background:var(--charcoal);color:var(--cream);overflow:hidden;white-space:nowrap;
+  padding:9px 0;position:relative;z-index:900;
+}
+.strip-track{display:inline-flex;gap:48px;animation:marquee 26s linear infinite;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+.strip-track span{opacity:.85}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- nav ---------- */
+nav{
+  position:sticky;top:0;z-index:900;background:rgba(246,241,231,.86);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(42,38,33,.08);
+}
+.nav-inner{
+  max-width:1240px;margin:0 auto;padding:18px 32px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.logo{
+  display:inline-flex;align-items:center;position:relative;cursor:pointer;
+}
+.logo img{height:28px;width:auto;display:block}
+.nav-links{display:flex;gap:30px;list-style:none}
+.nav-links a{
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--charcoal);opacity:.7;
+  position:relative;padding-bottom:3px;transition:opacity .2s;
+}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--brown);transition:width .3s ease}
+.nav-links a:hover{opacity:1}
+.nav-links a:hover::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:14px}
+.btn-order{
+  font-family:var(--sans);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;
+  background:var(--forest);color:var(--white);padding:11px 22px;border-radius:100px;
+  display:inline-flex;align-items:center;gap:8px;transition:transform .25s ease, background .25s ease;
+}
+.btn-order:hover{background:var(--charcoal);transform:translateY(-2px)}
+.btn-order svg{width:14px;height:14px}
+.ham{display:none;flex-direction:column;gap:5px;padding:6px}
+.ham span{width:22px;height:1.5px;background:var(--charcoal)}
+
+@media(max-width:900px){
+  .nav-links{display:none}
+  .ham{display:flex}
+}
+
+/* ---------- magnetic btn base ---------- */
+.magnetic{display:inline-block;transition:transform .2s ease}
+
+/* ================= HERO ================= */
+.hero{
+  position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+  padding:80px 32px 60px;overflow:hidden;
+}
+.hero-bgtext{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-family:var(--serif);font-size:clamp(120px,22vw,340px);color:rgba(42,38,33,.035);
+  white-space:nowrap;font-weight:600;pointer-events:none;letter-spacing:-.02em;
+}
+.hero-inner{
+  max-width:1240px;margin:0 auto;width:100%;position:relative;z-index:2;
+  display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;
+}
+.hero-tag{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brown);margin-bottom:26px;display:flex;align-items:center;gap:10px}
+.hero-tag .ln{width:30px;height:1px;background:var(--brown)}
+.hero h1{
+  font-family:var(--serif);font-weight:500;font-size:clamp(48px,6.4vw,92px);line-height:1;letter-spacing:.01em;
+  color:var(--charcoal);
+}
+.hero h1 em{font-family:var(--script);font-style:normal;color:var(--forest);font-weight:400}
+.hero p.lede{margin-top:26px;max-width:420px;font-size:17px;line-height:1.7;color:rgba(42,38,33,.72);font-weight:300}
+.hero-ctas{margin-top:38px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.btn-primary{
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;
+  background:var(--charcoal);color:var(--cream);padding:16px 32px;border-radius:100px;
+  display:inline-flex;align-items:center;gap:10px;transition:all .3s ease;
+}
+.btn-primary:hover{background:var(--forest);transform:translateY(-2px)}
+.btn-ghost{
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--charcoal);
+  padding:16px 8px;border-bottom:1px solid var(--charcoal);transition:opacity .3s;
+}
+.btn-ghost:hover{opacity:.55}
+
+.hero-visual{position:relative;aspect-ratio:4/5}
+.hero-float{width:100%;height:100%;border-radius:6px;overflow:hidden;animation:heroFloat 6.5s ease-in-out infinite;box-shadow:0 50px 90px -28px rgba(42,38,33,.4)}
+@keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.hero-carousel{position:relative;width:100%;height:100%;background:linear-gradient(160deg, var(--beige) 0%, var(--brown) 130%)}
+.hero-visual .ph{
+  width:100%;height:100%;position:relative;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(198,154,69,.35), transparent 55%),
+    linear-gradient(160deg, var(--beige) 0%, var(--brown) 130%);
+}
+.hero-visual .ph::before{
+  content:'';position:absolute;inset:0;
+  background-image:repeating-linear-gradient(45deg, rgba(255,255,255,.05) 0 2px, transparent 2px 6px),
+                    repeating-linear-gradient(-45deg, rgba(0,0,0,.06) 0 2px, transparent 2px 6px);
+}
+.hero-visual .bag{
+  position:absolute;bottom:8%;left:50%;transform:translateX(-50%);width:56%;
+  filter:drop-shadow(0 30px 40px rgba(0,0,0,.25));
+}
+.hero-caption{
+  position:absolute;bottom:18px;left:18px;background:rgba(246,241,231,.9);backdrop-filter:blur(6px);
+  padding:9px 14px;border-radius:100px;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--charcoal);
+}
+.floaty{position:absolute;border-radius:50%;background:var(--mustard-soft);opacity:.5;filter:blur(1px)}
+.hero-scroll-cue{
+  position:absolute;bottom:26px;left:32px;display:flex;align-items:center;gap:10px;font-size:10px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--brown);z-index:2;
+}
+.hero-scroll-cue .line{width:1px;height:34px;background:var(--brown);position:relative;overflow:hidden}
+.hero-scroll-cue .line::after{content:'';position:absolute;top:-100%;left:0;width:100%;height:100%;background:var(--charcoal);animation:scrollcue 1.8s ease-in-out infinite}
+@keyframes scrollcue{0%{top:-100%}50%{top:0}100%{top:100%}}
+
+/* ================= SECTION generic ================= */
+.section{padding:130px 32px}
+.section-tight{padding:90px 32px}
+.section-head{max-width:640px;margin-bottom:64px}
+.section-head .eyebrow{margin-bottom:16px}
+.section-head h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,4.6vw,56px);line-height:1.05;letter-spacing:.015em}
+.section-head p{margin-top:18px;font-size:16px;line-height:1.75;color:rgba(42,38,33,.68);font-weight:300;max-width:520px}
+.center{text-align:center;margin-left:auto;margin-right:auto}
+
+/* ---------- philosophy ---------- */
+.philosophy{background:var(--white)}
+.phil-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;max-width:1240px;margin:0 auto}
+.phil-card{padding-top:26px;border-top:1px solid rgba(42,38,33,.14)}
+.phil-num{font-family:var(--script);font-size:16px;color:var(--mustard);margin-bottom:18px}
+.phil-card h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:14px}
+.phil-card p{font-size:14.5px;line-height:1.75;color:rgba(42,38,33,.68);font-weight:300}
+
+/* ---------- founder story ---------- */
+.founder{background:var(--charcoal);color:var(--cream);position:relative;overflow:hidden}
+.founder .container{position:relative;z-index:2}
+.founder-top{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:end;margin-bottom:90px}
+.founder-top .eyebrow{color:var(--mustard-soft)}
+.founder-top h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4.6vw,54px);line-height:1.15;letter-spacing:.01em;color:var(--cream)}
+.founder-quote{
+  font-family:var(--script);font-weight:400;font-size:clamp(24px,2.8vw,34px);
+  line-height:1.5;max-width:900px;color:var(--cream);padding:60px 0;border-top:1px solid rgba(246,241,231,.15);border-bottom:1px solid rgba(246,241,231,.15);
+}
+.founder-quote span{color:var(--mustard-soft)}
+.founder-body{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:70px}
+.founder-body p{font-size:16px;line-height:1.9;color:rgba(246,241,231,.72);font-weight:300;margin-bottom:22px}
+.founder-signoff{margin-top:50px;font-family:var(--beng);font-size:20px;color:var(--mustard-soft)}
+
+/* ---------- nature & craft ---------- */
+.craft{background:var(--cream)}
+.craft-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.craft-visual{position:relative;aspect-ratio:1/1.1;border-radius:6px;overflow:hidden}
+.craft-slider{position:relative;width:100%;height:100%}
+.craft-slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease;background:var(--charcoal)}
+.craft-slide.active{opacity:1}
+.craft-slide video{width:100%;height:100%;object-fit:cover;display:block}
+.craft-dots{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:3}
+.craft-dots button{width:7px;height:7px;border-radius:50%;background:rgba(255,253,248,.4);transition:all .3s ease;padding:0}
+.craft-dots button.active{background:var(--white);width:20px;border-radius:4px}
+.craft-text .step{display:flex;gap:22px;padding:26px 0;border-top:1px solid rgba(42,38,33,.12)}
+.craft-text .step:last-child{border-bottom:1px solid rgba(42,38,33,.12)}
+.step-tag{font-family:var(--script);font-size:16px;color:var(--mustard);min-width:70px}
+.step h4{font-family:var(--serif);font-weight:500;font-size:19px;margin-bottom:8px}
+.step p{font-size:14px;line-height:1.7;color:rgba(42,38,33,.68);font-weight:300}
+
+/* ---------- why jute ---------- */
+.whyjute{background:var(--beige)}
+.wj-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(42,38,33,.15);border:1px solid rgba(42,38,33,.15)}
+.wj-cell{background:var(--beige);padding:44px 30px;min-height:230px;display:flex;flex-direction:column;justify-content:space-between}
+.wj-cell .num{font-family:var(--script);font-size:16px;color:var(--brown)}
+.wj-cell h4{font-family:var(--serif);font-weight:500;font-size:21px;margin-top:20px}
+.wj-cell p{font-size:13.5px;line-height:1.65;color:rgba(42,38,33,.7);font-weight:300;margin-top:10px}
+@media(max-width:900px){.wj-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- featured product ---------- */
+.product{background:var(--white)}
+.product-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.product-visual{position:relative;aspect-ratio:1/1;border-radius:6px;overflow:hidden}
+.product-visual .ph{width:100%;height:100%;position:relative;transition:background 1.2s ease}
+.product-visual .ph.juco{background:radial-gradient(circle at 35% 25%, rgba(198,154,69,.4), transparent 55%), linear-gradient(160deg,#C9AE7C 0%, #5B3E27 130%)}
+.product-visual .ph.jute{background:radial-gradient(circle at 35% 25%, rgba(107,74,48,.35), transparent 55%), linear-gradient(160deg,#D8C6A3 0%, #8A6A42 130%)}
+.product-visual .ph::before{content:'';position:absolute;inset:0;background-image:
+  repeating-linear-gradient(60deg, rgba(255,255,255,.06) 0 2px, transparent 2px 6px),
+  repeating-linear-gradient(-30deg, rgba(0,0,0,.05) 0 2px, transparent 2px 6px);}
+.product-tag{position:absolute;top:20px;left:20px;background:rgba(255,253,248,.9);padding:8px 14px;border-radius:100px;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;z-index:2}
+
+/* variant tabs */
+.variant-tabs{display:flex;gap:10px;margin-bottom:34px}
+.variant-tab{padding:12px 22px;border-radius:100px;border:1px solid rgba(42,38,33,.22);font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;transition:all .25s ease}
+.variant-tab.active{background:var(--charcoal);color:var(--cream);border-color:var(--charcoal)}
+.variant-panel{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .4s ease}
+.variant-panel.active{opacity:1;pointer-events:auto}
+.variant-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brown);margin-bottom:10px}
+
+/* product gallery */
+.product-gallery{position:relative;width:100%;height:100%}
+.gallery-slide{position:absolute;inset:0;opacity:0;transition:opacity .6s ease}
+.gallery-slide.active{opacity:1;z-index:1}
+.gallery-slide img,.gallery-slide video{width:100%;height:100%;object-fit:cover;display:block}
+.gallery-nav{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:rgba(255,253,248,.9);display:flex;align-items:center;justify-content:center;z-index:3;transition:background .25s ease}
+.gallery-nav:hover{background:var(--white)}
+.gallery-nav svg{width:15px;height:15px;stroke:var(--charcoal);fill:none;stroke-width:1.6}
+.gallery-prev{left:16px}
+.gallery-next{right:16px}
+.gallery-dots{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:3}
+.gallery-dots button{width:7px;height:7px;border-radius:50%;background:rgba(255,253,248,.55);transition:all .3s ease;padding:0}
+.gallery-dots button.active{background:var(--white);width:20px;border-radius:4px}
+
+.price-row{display:flex;align-items:baseline;gap:14px;margin:30px 0 4px}
+.product-price{font-family:var(--serif);font-size:40px;font-weight:500}
+.product-price sup{font-size:18px;top:-14px}
+.price-strike{font-family:var(--serif);font-size:22px;color:rgba(42,38,33,.4);text-decoration:line-through;text-decoration-thickness:1.5px}
+.off-badge{background:var(--forest);color:var(--white);font-size:11px;letter-spacing:.06em;font-weight:700;padding:5px 12px;border-radius:100px;text-transform:uppercase}
+.product-handle{font-size:14px;color:rgba(42,38,33,.65);margin-bottom:28px}
+.dims{display:flex;gap:26px;padding:22px 0;border-top:1px solid rgba(42,38,33,.14);border-bottom:1px solid rgba(42,38,33,.14);margin-bottom:32px}
+.dim{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--brown)}
+.dim b{display:block;font-family:var(--serif);font-size:20px;color:var(--charcoal);text-transform:none;letter-spacing:0;margin-top:4px}
+.product-desc{font-size:15px;line-height:1.75;color:rgba(42,38,33,.7);font-weight:300;margin-bottom:34px}
+
+.spec-block{margin-bottom:30px}
+.spec-block h5{font-family:var(--serif);font-weight:500;font-size:16px;margin-bottom:14px;letter-spacing:.02em}
+.spec-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.spec-list li{font-size:14px;line-height:1.6;color:rgba(42,38,33,.7);font-weight:300;padding-left:18px;position:relative}
+.spec-list li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--mustard)}
+
+.weather-callout{
+  display:flex;gap:16px;background:rgba(51,66,44,.06);border:1px solid rgba(51,66,44,.16);
+  border-radius:10px;padding:20px 22px;margin-bottom:30px;text-align:left;
+}
+.weather-callout-icon{font-size:22px;line-height:1;flex-shrink:0}
+.weather-callout h5{font-family:var(--serif);font-weight:500;font-size:15px;margin-bottom:8px;color:var(--forest)}
+.weather-callout p{font-size:13.5px;line-height:1.65;color:rgba(42,38,33,.68);font-weight:300}
+.weather-callout .weather-note{margin-top:8px;font-size:12px;font-style:italic;color:rgba(42,38,33,.5)}
+
+/* ---------- gift hampers (The Pause Hamper) ---------- */
+.hampers{background:var(--cream-2)}
+.pause-subtitle{font-family:var(--beng);font-size:16px;color:var(--brown);margin-top:10px}
+.pause-ritual{margin-top:10px}
+
+/* ---------- customisation ---------- */
+.custom{background:var(--white)}
+.custom-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
+.custom-item{text-align:left}
+.custom-icon{width:44px;height:44px;margin-bottom:22px;position:relative}
+.custom-icon svg{width:100%;height:100%;stroke:var(--forest);fill:none;stroke-width:1.2}
+.custom-item h4{font-family:var(--serif);font-weight:500;font-size:19px;margin-bottom:10px}
+.custom-item p{font-size:13.5px;line-height:1.65;color:rgba(42,38,33,.65);font-weight:300}
+@media(max-width:900px){.custom-grid{grid-template-columns:repeat(2,1fr);gap:36px}}
+
+/* ---------- corporate ---------- */
+.corporate{background:var(--forest);color:var(--cream);position:relative;overflow:hidden}
+.corp-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.corp-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px 30px;margin-top:10px}
+.corp-list li{font-size:14.5px;padding:12px 0;border-top:1px solid rgba(246,241,231,.18);display:flex;align-items:center;gap:10px}
+.corp-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--mustard-soft);flex-shrink:0}
+.corporate .section-head h2{color:var(--cream)}
+.corporate .eyebrow{color:var(--mustard-soft)}
+.btn-outline{
+  font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--cream);
+  border:1px solid rgba(246,241,231,.4);padding:16px 30px;border-radius:100px;display:inline-flex;
+  align-items:center;gap:10px;margin-top:36px;transition:all .3s ease;
+}
+.btn-outline:hover{background:var(--cream);color:var(--forest);border-color:var(--cream)}
+
+/* ---------- culture banner ---------- */
+.culture-banner{position:relative;width:100%;line-height:0;overflow:hidden}
+.culture-banner img{width:100%;height:auto;display:block}
+.culture-banner-fade{position:absolute;inset:0;background:linear-gradient(to bottom, rgba(42,38,33,0) 70%, rgba(42,38,33,.28) 100%)}
+@media(max-width:700px){.culture-banner img{aspect-ratio:4/3;object-fit:cover}}
+
+/* ---------- instagram ---------- */
+.instagram{background:var(--cream)}
+.insta-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px}
+.insta-cell{aspect-ratio:1;position:relative;overflow:hidden;cursor:pointer}
+.insta-cell img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.insta-cell:hover img{transform:scale(1.08)}
+.insta-cell .overlay{
+  position:absolute;inset:0;background:rgba(42,38,33,.4);display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity .3s ease;
+}
+.insta-cell:hover .overlay{opacity:1}
+.insta-cell .overlay svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:1.3}
+@media(max-width:900px){.insta-grid{grid-template-columns:repeat(3,1fr)}}
+
+/* ---------- newsletter ---------- */
+.newsletter{background:var(--charcoal);color:var(--cream)}
+.nl-inner{max-width:640px;margin:0 auto;text-align:center}
+.nl-inner h2{font-family:var(--serif);font-weight:400;letter-spacing:.02em;font-size:clamp(30px,4.4vw,46px);margin-bottom:18px}
+.nl-inner p{font-size:15px;color:rgba(246,241,231,.65);font-weight:300;margin-bottom:38px}
+.nl-form{display:flex;gap:0;border-bottom:1px solid rgba(246,241,231,.35);padding-bottom:14px;max-width:440px;margin:0 auto}
+.nl-form input{
+  flex:1;background:none;border:none;color:var(--cream);font-size:15px;font-family:var(--sans);outline:none;
+}
+.nl-form input::placeholder{color:rgba(246,241,231,.4)}
+.nl-form button{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mustard-soft);font-weight:600;white-space:nowrap}
+.nl-note{margin-top:16px;font-size:11px;color:rgba(246,241,231,.4)}
+
+/* ---------- contact ---------- */
+.contact{background:var(--white)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.contact-item{padding:28px 0;border-top:1px solid rgba(42,38,33,.14);display:flex;align-items:center;justify-content:space-between;gap:20px}
+.contact-item:last-child{border-bottom:1px solid rgba(42,38,33,.14)}
+.contact-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brown)}
+.contact-value{font-family:var(--serif);font-size:20px;margin-top:4px}
+.contact-arrow{width:34px;height:34px;border-radius:50%;border:1px solid rgba(42,38,33,.25);display:flex;align-items:center;justify-content:center;transition:all .3s ease;flex-shrink:0}
+.contact-arrow svg{width:14px;height:14px;stroke:var(--charcoal);fill:none;stroke-width:1.4;transition:transform .3s ease}
+.contact-item:hover .contact-arrow{background:var(--charcoal);border-color:var(--charcoal)}
+.contact-item:hover .contact-arrow svg{stroke:var(--cream);transform:translate(2px,-2px)}
+.contact-map{position:relative;border-radius:6px;overflow:hidden;min-height:340px}
+.contact-map .ph{position:absolute;inset:0;background:linear-gradient(160deg,var(--beige),var(--forest))}
+.contact-map .pin{position:absolute;top:44%;left:48%;width:14px;height:14px;background:var(--mustard);border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 0 0 6px rgba(198,154,69,.25)}
+.contact-map .loc{position:absolute;bottom:22px;left:22px;background:rgba(255,253,248,.92);padding:12px 18px;border-radius:8px;font-size:12.5px}
+.contact-map .loc b{display:block;font-family:var(--serif);font-size:16px;margin-bottom:2px}
+
+/* ---------- footer ---------- */
+footer{background:var(--charcoal);color:var(--cream);padding-top:90px}
+.footer-top{display:grid;grid-template-columns:1.3fr repeat(3,1fr);gap:50px;padding-bottom:70px}
+.footer-logo{margin-bottom:16px;display:inline-flex}
+.footer-logo img{height:32px;width:auto;display:block}
+.footer-top p.tag{font-family:var(--beng);font-size:14px;color:rgba(246,241,231,.45);max-width:260px;line-height:1.7}
+.footer-col h5{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,241,231,.45);margin-bottom:20px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.footer-col a{font-size:14px;color:rgba(246,241,231,.75);transition:color .2s}
+.footer-col a:hover{color:var(--mustard-soft)}
+.footer-bottom{
+  border-top:1px solid rgba(246,241,231,.12);padding:26px 0;display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:12px;font-size:12px;color:rgba(246,241,231,.4);
+}
+.footer-social{display:flex;gap:16px}
+.footer-social a{width:34px;height:34px;border:1px solid rgba(246,241,231,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .25s ease}
+.footer-social a:hover{background:var(--mustard-soft);border-color:var(--mustard-soft)}
+.footer-social svg{width:14px;height:14px;stroke:var(--cream);fill:none;stroke-width:1.4}
+
+/* ---------- floating whatsapp ---------- */
+.wa-float{
+  position:fixed;bottom:26px;right:26px;z-index:950;background:var(--forest);color:#fff;
+  width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 10px 28px rgba(51,66,44,.4);transition:transform .3s ease;
+}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:26px;height:26px;fill:#fff}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity 1s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-visual{order:-1;aspect-ratio:4/3}
+  .founder-top,.founder-body,.craft-grid,.product-grid,.corp-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+  .phil-grid{grid-template-columns:1fr;gap:36px}
+  .custom-grid{grid-template-columns:1fr}
+  .section{padding:90px 24px}
+  .footer-top{grid-template-columns:1fr 1fr;gap:36px}
+}
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="scroll-track"><div class="scroll-firefly" id="scrollFirefly"></div></div>
+
+<!-- ANNOUNCEMENT STRIP -->
+<div class="strip">
+  <div class="strip-track">
+    <span>🌿 Welcome to Jutik</span><span>Get 20% Off on Your First Order</span><span>Crafted Naturally, Rooted in Kolkata</span><span>Free Shipping on Eligible Orders</span>
+    <span>🌿 Welcome to Jutik</span><span>Get 20% Off on Your First Order</span><span>Crafted Naturally, Rooted in Kolkata</span><span>Free Shipping on Eligible Orders</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo magnetic"><img src="media/logo-onlight.png" alt="Jutik" width="900" height="520"></a>
+    <ul class="nav-links">
+      <li><a href="#philosophy">Philosophy</a></li>
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#product">Shop</a></li>
+      <li><a href="#hampers">Gifting</a></li>
+      <li><a href="#corporate">Corporate</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://wa.me/919123865592?text=Hi%20Jutik!%20I'd%20like%20to%20place%20an%20order." target="_blank" class="btn-order magnetic">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.87 11.87L4 20l4.24-1.11a7.93 7.93 0 0 0 3.8.97h.01a7.94 7.94 0 0 0 5.55-13.54zM12.05 18.4a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.5.66.67-2.44-.16-.25a6.58 6.58 0 0 1 10.2-8.14 6.53 6.53 0 0 1 1.93 4.66 6.6 6.6 0 0 1-6.54 6.57zm3.6-4.93c-.2-.1-1.17-.58-1.35-.64-.18-.07-.31-.1-.44.1-.13.2-.5.64-.62.77-.11.13-.23.15-.43.05a5.4 5.4 0 0 1-1.6-.98 6 6 0 0 1-1.1-1.37c-.12-.2 0-.3.09-.4.09-.1.2-.24.3-.36.1-.12.13-.2.2-.34.06-.13.03-.25-.02-.35-.05-.1-.44-1.06-.6-1.45-.16-.38-.32-.33-.44-.33h-.38c-.13 0-.34.05-.52.25s-.68.67-.68 1.63.7 1.9.8 2.03c.1.13 1.38 2.1 3.34 2.95.47.2.83.32 1.12.41.47.15.9.13 1.24.08.38-.06 1.17-.48 1.33-.94.16-.46.16-.86.11-.94-.05-.1-.18-.15-.38-.24z"/></svg>
+        Order on WhatsApp
+      </a>
+      <button class="ham" id="hamBtn"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bgtext" id="heroBgText">JUTIK</div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag reveal"><span class="ln"></span> Made in Kolkata &nbsp;·&nbsp; Rooted in Nature</div>
+      <h1 class="reveal">Carry the <em>Culture</em></h1>
+      <p class="lede reveal">Jutik is a modern sustainable lifestyle brand — jute carried the way our grandparents meant it, redesigned for the rhythm of everyday life.</p>
+      <div class="hero-ctas reveal">
+        <a href="#product" class="btn-primary magnetic">
+          Explore Collection
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#story" class="btn-ghost magnetic">Read Our Story</a>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <div class="sticker tilt-left" style="top:-14px;left:-10px">no soggy tiffin, promise 🍱</div>
+      <div class="sticker tilt-right" style="bottom:52px;right:-16px">certified deadline survivor</div>
+      <div class="hero-float">
+        <div class="hero-carousel" id="heroCarousel">
+          <div class="gallery-slide active"><img src="media/product1-a.jpg" alt="The 9-to-5 Tiffin Tote — Deadline Tight print"></div>
+          <div class="gallery-slide"><video src="media/product1-video.mp4" poster="media/product1-video-poster.jpg" autoplay muted loop playsinline></video></div>
+          <div class="gallery-slide"><img src="media/product1-b.jpg" alt="The 9-to-5 Tiffin Tote — Deadline Tight print, front view"></div>
+          <div class="gallery-slide"><img src="media/product2-a.jpg" alt="The 9-to-5 Tiffin Tote — Code More print"></div>
+          <div class="gallery-slide"><video src="media/product2-video.mp4" poster="media/product2-video-poster.jpg" autoplay muted loop playsinline></video></div>
+          <div class="gallery-slide"><img src="media/product2-b.jpg" alt="The 9-to-5 Tiffin Tote — Code More print, front view"></div>
+          <div class="gallery-dots">
+            <button class="active" data-i="0"></button><button data-i="1"></button><button data-i="2"></button>
+            <button data-i="3"></button><button data-i="4"></button><button data-i="5"></button>
+          </div>
+        </div>
+      </div>
+      <div class="hero-caption">The 9-to-5 Tiffin Tote — Our Signature Carry</div>
+    </div>
+  </div>
+  <style>@media(max-width:900px){.hero-visual .sticker{display:none}}</style>
+  <div class="hero-scroll-cue"><div class="line"></div> Scroll</div>
+</section>
+<style>
+@keyframes float1{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+@keyframes float2{0%,100%{transform:translateY(0)}50%{transform:translateY(14px)}}
+</style>
+
+<!-- PHILOSOPHY -->
+<section class="section philosophy" id="philosophy">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Our Philosophy</div>
+      <h2>Everyday objects, held to a higher standard.</h2>
+      <p>We believe the things you touch daily should be honest about where they come from — and gentle about where they go next.</p>
+    </div>
+    <div class="phil-grid">
+      <div class="phil-card reveal">
+        <div class="phil-num">01</div>
+        <h3>Nature First</h3>
+        <p>Every material is chosen for how it returns to the earth, not just how it looks on a shelf.</p>
+      </div>
+      <div class="phil-card reveal">
+        <div class="phil-num">02</div>
+        <h3>Made Slowly</h3>
+        <p>Small batches, local hands, and enough time to get the weave and the finish right.</p>
+      </div>
+      <div class="phil-card reveal">
+        <div class="phil-num">03</div>
+        <h3>Built to Last</h3>
+        <p>Designed for daily use for years — not a season — so it never becomes waste too soon.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER STORY -->
+<section class="section founder" id="story">
+  <div class="container">
+    <div class="founder-top">
+      <div class="eyebrow reveal">Our Story</div>
+      <h2 class="reveal">Jutik began with three friends and a simple belief — the things we use every day should carry meaning, not waste.</h2>
+    </div>
+    <div class="founder-quote reveal">
+      Growing up in Bengal, jute was never a trend — it was simply <span>a way of life.</span> Our grandparents carried it, our homes were filled with it, and somewhere along the way, we replaced it with convenience and forgot the stories woven into its fibres.
+    </div>
+    <div class="founder-body">
+      <p class="reveal">We started Jutik to bring those stories back — not through nostalgia, but through design made for modern living. We wanted something that could sit on a desk in a glass office, ride the metro at rush hour, and still feel like it belonged to a home in Kolkata.</p>
+      <p class="reveal">Every Jutik piece is a small reminder that sustainability can be beautiful, that rituals can be simple, and that the most meaningful things are often the ones rooted closest to home. This is only the beginning of that story — we're building it one season, one fibre, one friend at a time.</p>
+    </div>
+    <div class="founder-signoff reveal">Jutik — একটি পাটের গল্প ৷</div>
+  </div>
+</section>
+
+<!-- NATURE & CRAFT -->
+<section class="section craft">
+  <div class="container">
+    <div class="craft-grid">
+      <div class="craft-visual reveal">
+        <div class="craft-slider" id="craftSlider">
+          <div class="craft-slide active">
+            <video src="media/craft-1.mp4" poster="media/craft-1-poster.jpg" autoplay muted loop playsinline></video>
+          </div>
+          <div class="craft-slide">
+            <video src="media/craft-2.mp4" poster="media/craft-2-poster.jpg" autoplay muted loop playsinline></video>
+          </div>
+          <div class="craft-slide">
+            <video src="media/craft-3.mp4" poster="media/craft-3-poster.jpg" autoplay muted loop playsinline></video>
+          </div>
+          <div class="craft-dots">
+            <button class="active" data-i="0" aria-label="Show video 1"></button>
+            <button data-i="1" aria-label="Show video 2"></button>
+            <button data-i="2" aria-label="Show video 3"></button>
+          </div>
+        </div>
+      </div>
+      <div class="craft-text">
+        <div class="eyebrow reveal" style="margin-bottom:16px">Nature &amp; Craft</div>
+        <h2 class="reveal" style="font-family:var(--serif);font-weight:500;font-size:clamp(28px,3.4vw,40px);margin-bottom:30px;line-height:1.15">From fibre to finish, nothing is rushed.</h2>
+        <div class="step reveal">
+          <div class="step-tag">Grow</div>
+          <div><h4>Golden Fibre</h4><p>Jute is grown along the Bengal delta with minimal water and no synthetic inputs — one of the most sustainable fibres on earth.</p></div>
+        </div>
+        <div class="step reveal">
+          <div class="step-tag">Weave</div>
+          <div><h4>Local Hands</h4><p>Each piece is woven and stitched by artisan partners in and around Kolkata, keeping the craft — and the income — local.</p></div>
+        </div>
+        <div class="step reveal">
+          <div class="step-tag">Finish</div>
+          <div><h4>Considered Detail</h4><p>Vegan leather and cotton trims are chosen to complement, not compromise, the biodegradable core of every product.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY JUTE -->
+<section class="whyjute">
+  <div class="container" style="padding-top:130px;padding-bottom:70px">
+    <div class="section-head reveal">
+      <div class="eyebrow">Why Jute</div>
+      <h2>The original sustainable fibre.</h2>
+    </div>
+  </div>
+  <div class="wj-grid">
+    <div class="wj-cell reveal"><div class="num">01</div><div><h4>Biodegradable</h4><p>Breaks down naturally within months, leaving no microplastics behind.</p></div></div>
+    <div class="wj-cell reveal"><div class="num">02</div><div><h4>Low Water Use</h4><p>Requires a fraction of the water used to grow cotton.</p></div></div>
+    <div class="wj-cell reveal"><div class="num">03</div><div><h4>High Durability</h4><p>Strong, breathable fibres that hold shape through years of daily use.</p></div></div>
+    <div class="wj-cell reveal"><div class="num">04</div><div><h4>Carbon Positive</h4><p>Jute plants absorb more CO₂ than most crops during their short growth cycle.</p></div></div>
+  </div>
+</section>
+
+<!-- CULTURE BANNER -->
+<section class="culture-banner reveal">
+  <img src="media/banner-culture.jpg" alt="Jutik totes styled with brass and jute heritage props">
+  <div class="culture-banner-fade"></div>
+</section>
+
+<!-- FEATURED PRODUCT -->
+<section class="section product" id="product">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Featured Product</div>
+      <h2>The 9-to-5 Tiffin Tote</h2>
+    </div>
+    <div class="variant-tabs reveal">
+      <button class="variant-tab active" data-variant="v1">Deadline Tight</button>
+      <button class="variant-tab" data-variant="v2">Code More</button>
+    </div>
+    <div class="product-grid">
+      <div class="product-visual reveal">
+        <div class="variant-panel active" data-variant="v1">
+          <div class="product-gallery" id="galleryV1">
+            <div class="gallery-slide active"><img src="media/product1-a.jpg" alt="Deadline Tight print — angle view"></div>
+            <div class="gallery-slide"><img src="media/product1-b.jpg" alt="Deadline Tight print — front view"></div>
+            <div class="gallery-slide"><img src="media/product1-c.jpg" alt="Deadline Tight print — details"></div>
+            <div class="gallery-slide"><video src="media/product1-video.mp4" poster="media/product1-video-poster.jpg" autoplay muted loop playsinline></video></div>
+            <div class="product-tag">25% Off</div>
+            <button class="gallery-nav gallery-prev" aria-label="Previous image"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+            <button class="gallery-nav gallery-next" aria-label="Next image"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+            <div class="gallery-dots">
+              <button class="active" data-i="0"></button><button data-i="1"></button><button data-i="2"></button><button data-i="3"></button>
+            </div>
+          </div>
+        </div>
+        <div class="variant-panel" data-variant="v2">
+          <div class="product-gallery" id="galleryV2">
+            <div class="gallery-slide active"><img src="media/product2-a.jpg" alt="Code More print — angle view"></div>
+            <div class="gallery-slide"><img src="media/product2-b.jpg" alt="Code More print — front view"></div>
+            <div class="gallery-slide"><img src="media/product2-c.jpg" alt="Code More print — details"></div>
+            <div class="gallery-slide"><video src="media/product2-video.mp4" poster="media/product2-video-poster.jpg" autoplay muted loop playsinline></video></div>
+            <div class="product-tag">25% Off</div>
+            <button class="gallery-nav gallery-prev" aria-label="Previous image"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+            <button class="gallery-nav gallery-next" aria-label="Next image"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+            <div class="gallery-dots">
+              <button class="active" data-i="0"></button><button data-i="1"></button><button data-i="2"></button><button data-i="3"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="variant-label" id="variantLabel">Deadline Tight Print</div>
+        <div class="price-row">
+          <div class="product-price"><sup>₹</sup>599</div>
+          <div class="price-strike">₹799</div>
+          <div class="off-badge">25% Off</div>
+        </div>
+        <div class="product-handle">Natural Jute Fibre · Premium Leather Handle</div>
+        <p class="product-desc">Structured, roomy and endlessly reusable — the 9-to-5 Tiffin Tote was built for the deadline-tight, tiffin-right rush, from your morning commute to your evening wind-down.</p>
+        <div class="dims">
+          <div class="dim">Width<b>12"</b></div>
+          <div class="dim">Height<b>10"</b></div>
+          <div class="dim">Depth<b>5"</b></div>
+        </div>
+        <div class="weather-callout">
+          <div class="weather-callout-icon">☂</div>
+          <div>
+            <h5>Everyday Weather Ready</h5>
+            <p>Unexpected drizzle on your way to work? Jutik is thoughtfully designed to help resist everyday splashes and light rain, so your lunch and daily essentials stay better protected during your commute.</p>
+            <p class="weather-note">Natural jute is a living fibre. Allow the bag to air dry naturally if it gets wet.</p>
+          </div>
+        </div>
+        <div class="spec-block">
+          <h5>Specifications</h5>
+          <ul class="spec-list">
+            <li>Natural Jute Fibre</li>
+            <li>Premium Leather Handle</li>
+            <li>Thermal Insulated Interior</li>
+            <li>Water Resistant</li>
+            <li>Leak Proof</li>
+            <li>Spoon Holder</li>
+            <li>Two Elastic Bottle Holders</li>
+            <li>Inner Pocket</li>
+            <li>Size: 12 × 10 × 5 inches</li>
+          </ul>
+        </div>
+        <div class="spec-block">
+          <h5>Care Instructions</h5>
+          <ul class="spec-list">
+            <li>Clean gently with a damp cloth.</li>
+            <li>Let it air dry before storing.</li>
+            <li>Avoid machine washing and soaking.</li>
+            <li>Store in a dry place.</li>
+            <li>Plant the included seed paper thank-you card after reading.</li>
+          </ul>
+        </div>
+        <a href="https://wa.me/919123865592?text=Hi%20Jutik!%20I'd%20like%20to%20order%20the%209-to-5%20Tiffin%20Tote." target="_blank" class="btn-primary magnetic">
+          Order Now on WhatsApp
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GIFT HAMPERS -->
+<section class="section hampers" id="hampers">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Gift Hampers</div>
+      <h2>The Pause Hamper</h2>
+      <div class="pause-subtitle">একটু থামার গল্প — a story of pausing, just for you.</div>
+    </div>
+    <div class="product-grid">
+      <div class="product-visual reveal">
+        <div class="product-gallery" id="hamperGallery">
+          <div class="gallery-slide active"><img src="media/hamper-1.jpg" alt="The Pause Hamper — full box contents"></div>
+          <div class="gallery-slide"><video src="media/hamper-1.mp4" autoplay muted loop playsinline></video></div>
+          <button class="gallery-nav gallery-prev" aria-label="Previous media"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="gallery-nav gallery-next" aria-label="Next media"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="gallery-dots">
+            <button class="active" data-i="0"></button><button data-i="1"></button>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="price-row">
+          <div class="product-price"><sup>₹</sup>1,599</div>
+          <div class="price-strike">₹2,199</div>
+          <div class="off-badge">27% Off</div>
+        </div>
+        <p class="product-desc">Some evenings don't need plans. They just need a warm cup, a little quiet, and a moment that's entirely yours.</p>
+        <p class="product-desc">The Pause Hamper is built for exactly that. Two handcrafted terracotta mugs, warm and earthy, ready for your evening chai. A scented soy wax candle in Monsoon Earth—misty, wild, and grounding, like the first rain hitting warm soil—poured into a brass jar you'll keep long after the wax is gone, ready to hold your trinkets, spices, or whatever needs a little home. A glass jar of our seed and nut mix—a wholesome medley of 12 seeds and nuts including almonds and cashews—because good things come better shared, or saved. And once it's empty, the jar's yours too, ready for a second life on your shelf.</p>
+        <p class="product-desc">Even our thank you card is planted in seed paper—read it, then plant it, and watch something grow.</p>
+        <p class="product-desc">Everything in this box is rooted in Bengal's craft heritage—jute, clay, and quiet ritual—brought together so you can carry that culture into your own evenings, one cup at a time.</p>
+        <p class="product-desc" style="font-style:italic">For slow sips, mindful bites, and everyday calm.</p>
+        <div class="spec-block">
+          <h5>The Evening Pour</h5>
+          <p class="product-desc" style="margin-bottom:18px">A handcrafted blend of butterfly pea flower, rose petals, premium Darjeeling tea, and dried lemon—balanced, floral, and gently citrusy. Thoughtfully packed in a reusable glass jar.</p>
+        </div>
+        <div class="spec-block">
+          <h5>What's Inside</h5>
+          <ul class="spec-list">
+            <li>2 handcrafted terracotta mugs</li>
+            <li>Scented soy wax candle — Monsoon Earth — in a reusable brass jar</li>
+            <li>The Evening Pour tea blend — butterfly pea, rose, premium Darjeeling &amp; dried lemon — in a reusable glass jar</li>
+            <li>Seed &amp; Nut Mix (12 varieties including almond and cashew) — in a reusable glass jar</li>
+            <li>Seed paper thank-you card — plant it after reading</li>
+          </ul>
+        </div>
+        <a href="https://wa.me/919123865592?text=Hi%20Jutik!%20I'd%20like%20to%20order%20The%20Pause%20Hamper." target="_blank" class="btn-primary magnetic">
+          Order Now on WhatsApp
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOMISATION -->
+<section class="section-tight custom">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Customisation</div>
+      <h2>Made a little more yours.</h2>
+    </div>
+    <div class="custom-grid">
+      <div class="custom-item reveal">
+        <div class="custom-icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg></div>
+        <h4>Customised Gifting</h4>
+        <p>Curated bundles built around the person you're gifting to.</p>
+      </div>
+      <div class="custom-item reveal">
+        <div class="custom-icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 12h8M8 8h8M8 16h5"/></svg></div>
+        <h4>Corporate Gifting</h4>
+        <p>Subtle logo embossing for office gifts and welcome kits.</p>
+      </div>
+      <div class="custom-item reveal">
+        <div class="custom-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4V4z"/></svg></div>
+        <h4>Event Gifting</h4>
+        <p>Favours and giveaways, packed and ready for handout.</p>
+      </div>
+      <div class="custom-item reveal">
+        <div class="custom-icon"><svg viewBox="0 0 24 24"><path d="M20 7H4a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1z"/><path d="M12 7V4M12 12v9M6 21h12"/></svg></div>
+        <h4>Bulk Orders</h4>
+        <p>Larger quantities for teams, stores and community giveaways.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CORPORATE -->
+<section class="section corporate" id="corporate">
+  <div class="container">
+    <div class="corp-grid">
+      <div>
+        <div class="section-head reveal" style="margin-bottom:0">
+          <div class="eyebrow">Corporate &amp; Bulk Orders</div>
+          <h2>Let's build something thoughtful together.</h2>
+          <p style="color:rgba(246,241,231,.65)">From onboarding kits to festive hampers, we work with teams who want gifting that actually feels considered.</p>
+        </div>
+        <a href="https://wa.me/919123865592?text=Hi%20Jutik!%20I'm%20interested%20in%20a%20corporate%2Fbulk%20order." target="_blank" class="btn-outline magnetic">
+          Talk to Us
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <ul class="corp-list reveal">
+        <li>Corporate Orders</li>
+        <li>Office Gifts</li>
+        <li>Employee Welcome Kits</li>
+        <li>Festive Hampers</li>
+        <li>Wedding Gifts</li>
+        <li>Party Favours</li>
+        <li>Event Giveaways</li>
+        <li>Bulk Custom Orders</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section class="section instagram" style="padding-left:0;padding-right:0">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">@jutik.official</div>
+      <h2>Follow the everyday of Jutik.</h2>
+    </div>
+  </div>
+  <div class="insta-grid">
+    <div class="insta-cell reveal"><img src="media/insta-1.jpg" alt="Jutik lifestyle photo 1" loading="lazy"><div class="overlay"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg></div></div>
+    <div class="insta-cell reveal"><img src="media/insta-2.jpg" alt="Jutik lifestyle photo 2" loading="lazy"><div class="overlay"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg></div></div>
+    <div class="insta-cell reveal"><img src="media/insta-3.jpg" alt="Jutik lifestyle photo 3" loading="lazy"><div class="overlay"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg></div></div>
+    <div class="insta-cell reveal"><img src="media/insta-4.jpg" alt="Jutik lifestyle photo 4" loading="lazy"><div class="overlay"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg></div></div>
+    <div class="insta-cell reveal"><img src="media/insta-5.jpg" alt="Jutik lifestyle photo 5" loading="lazy"><div class="overlay"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg></div></div>
+    <div class="insta-cell reveal"><img src="media/insta-6.jpg" alt="Jutik lifestyle photo 6" loading="lazy"><div class="overlay"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg></div></div>
+    <div class="insta-cell reveal"><img src="media/insta-7.jpg" alt="Jutik lifestyle photo 7" loading="lazy"><div class="overlay"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg></div></div>
+    <div class="insta-cell reveal"><img src="media/insta-8.jpg" alt="Jutik lifestyle photo 8" loading="lazy"><div class="overlay"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg></div></div>
+    <div class="insta-cell reveal"><img src="media/insta-9.jpg" alt="Jutik lifestyle photo 9" loading="lazy"><div class="overlay"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg></div></div>
+  </div>
+  <div class="container" style="padding-top:36px;text-align:center">
+    <a href="https://www.instagram.com/jutik.official/" target="_blank" class="btn-ghost magnetic">Follow @jutik.official</a>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="section newsletter">
+  <div class="nl-inner">
+    <div class="eyebrow reveal" style="color:var(--mustard-soft);margin-bottom:16px">Stay in Touch</div>
+    <h2 class="reveal">Stories, seasonal drops, and 20% off your first order.</h2>
+    <p class="reveal">No spam — just the occasional note from Kolkata.</p>
+    <form class="nl-form reveal" id="newsletterForm">
+      <input type="email" name="email" id="nlEmail" placeholder="Your email address" required>
+      <button type="submit" id="nlSubmit">Subscribe</button>
+    </form>
+    <div class="nl-note" id="nlNote">By subscribing you agree to receive marketing emails from Jutik.</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Get in Touch</div>
+      <h2>We'd love to hear from you.</h2>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <a href="https://wa.me/919123865592" target="_blank" class="contact-item reveal">
+          <div><div class="contact-label">Phone / WhatsApp</div><div class="contact-value">+91 91238 65592</div></div>
+          <div class="contact-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></div>
+        </a>
+        <a href="mailto:jutik.official@gmail.com" class="contact-item reveal">
+          <div><div class="contact-label">Email</div><div class="contact-value">jutik.official@gmail.com</div></div>
+          <div class="contact-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></div>
+        </a>
+        <a href="https://www.instagram.com/jutik.official/" target="_blank" class="contact-item reveal">
+          <div><div class="contact-label">Instagram</div><div class="contact-value">@jutik.official</div></div>
+          <div class="contact-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></div>
+        </a>
+        <a href="https://www.facebook.com/share/1G5VNi67TP/" target="_blank" class="contact-item reveal">
+          <div><div class="contact-label">Facebook</div><div class="contact-value">Jutik Official</div></div>
+          <div class="contact-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></div>
+        </a>
+      </div>
+      <div class="contact-map reveal">
+        <div class="ph"></div>
+        <div class="pin"></div>
+        <div class="loc"><b>Kolkata, West Bengal</b>Made and shipped from here</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo"><img src="media/logo-ondark.png" alt="Jutik" width="900" height="520"></div>
+        <p class="tag">একটি পাটের গল্প ৷ Rooted in nature, designed for mindful living.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Shop</h5>
+        <ul>
+          <li><a href="#product">Tiffin Bag</a></li>
+          <li><a href="#hampers">Gift Hampers</a></li>
+          <li><a href="#corporate">Corporate Gifting</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#philosophy">Philosophy</a></li>
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Coming Soon</h5>
+        <ul>
+          <li><a href="#">Journal</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Full Shop</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span id="year"></span> Jutik. All rights reserved.</div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/jutik.official/" target="_blank"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="https://www.facebook.com/share/1G5VNi67TP/" target="_blank"><svg viewBox="0 0 24 24"><path d="M15 4h-2a4 4 0 0 0-4 4v3H7v3h2v6h3v-6h2.5l.5-3H12V8a1 1 0 0 1 1-1h2V4z"/></svg></a>
+        <a href="https://wa.me/919123865592" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.87 11.87L4 20l4.24-1.11a7.93 7.93 0 0 0 3.8.97h.01a7.94 7.94 0 0 0 5.55-13.54zM12.05 18.4a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.5.66.67-2.44-.16-.25a6.58 6.58 0 0 1 10.2-8.14 6.53 6.53 0 0 1 1.93 4.66 6.6 6.6 0 0 1-6.54 6.57z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/919123865592?text=Hi%20Jutik!%20I'd%20like%20to%20place%20an%20order." target="_blank" class="wa-float" aria-label="Order on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.87 11.87L4 20l4.24-1.11a7.93 7.93 0 0 0 3.8.97h.01a7.94 7.94 0 0 0 5.55-13.54zM12.05 18.4a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.5.66.67-2.44-.16-.25a6.58 6.58 0 0 1 10.2-8.14 6.53 6.53 0 0 1 1.93 4.66 6.6 6.6 0 0 1-6.54 6.57zm3.6-4.93c-.2-.1-1.17-.58-1.35-.64-.18-.07-.31-.1-.44.1-.13.2-.5.64-.62.77-.11.13-.23.15-.43.05a5.4 5.4 0 0 1-1.6-.98 6 6 0 0 1-1.1-1.37c-.12-.2 0-.3.09-.4.09-.1.2-.24.3-.36.1-.12.13-.2.2-.34.06-.13.03-.25-.02-.35-.05-.1-.44-1.06-.6-1.45-.16-.38-.32-.33-.44-.33h-.38c-.13 0-.34.05-.52.25s-.68.67-.68 1.63.7 1.9.8 2.03c.1.13 1.38 2.1 3.34 2.95.47.2.83.32 1.12.41.47.15.9.13 1.24.08.38-.06 1.17-.48 1.33-.94.16-.46.16-.86.11-.94-.05-.1-.18-.15-.38-.24z"/></svg>
+</a>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* scroll progress */
+const progressBar = document.getElementById('scrollProgress');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  progressBar.style.width = scrolled + '%';
+});
+
+/* mobile scroll firefly — a touch-device echo of the desktop cursor,
+   riding a track on the right edge in sync with scroll position */
+if (matchMedia('(hover:none)').matches) {
+  const firefly = document.getElementById('scrollFirefly');
+  const track = document.querySelector('.scroll-track');
+  if(firefly && track){
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement;
+      const pct = h.scrollTop / (h.scrollHeight - h.clientHeight);
+      const trackH = track.clientHeight;
+      firefly.style.top = Math.max(0, Math.min(1, pct)) * (trackH - 12) + 'px';
+    }, { passive: true });
+  }
+}
+
+/* custom cursor (desktop only) */
+if (matchMedia('(hover:hover)').matches) {
+  const dot = document.getElementById('cursorDot');
+  const ring = document.getElementById('cursorRing');
+  let rx=0, ry=0, mx=0, my=0;
+  window.addEventListener('mousemove', e=>{
+    mx=e.clientX; my=e.clientY;
+    dot.style.left=mx+'px'; dot.style.top=my+'px';
+  });
+  function loop(){
+    rx += (mx-rx)*0.18; ry += (my-ry)*0.18;
+    ring.style.left=rx+'px'; ring.style.top=ry+'px';
+    requestAnimationFrame(loop);
+  }
+  loop();
+
+  /* sparkle trail — playful, throttled, brand-toned */
+  let lastSpark = 0;
+  window.addEventListener('mousemove', e=>{
+    const now = Date.now();
+    if(now - lastSpark < 60) return;
+    lastSpark = now;
+    const s = document.createElement('div');
+    s.className = 'sparkle';
+    s.style.left = e.clientX + 'px';
+    s.style.top = e.clientY + 'px';
+    document.body.appendChild(s);
+    setTimeout(()=>s.remove(), 700);
+  });
+  document.querySelectorAll('a,button').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{ring.style.width='54px';ring.style.height='54px';ring.style.opacity='.9'});
+    el.addEventListener('mouseleave',()=>{ring.style.width='34px';ring.style.height='34px';ring.style.opacity='.5'});
+  });
+
+  /* magnetic buttons */
+  document.querySelectorAll('.magnetic').forEach(el=>{
+    el.addEventListener('mousemove', e=>{
+      const r = el.getBoundingClientRect();
+      const x = e.clientX - r.left - r.width/2;
+      const y = e.clientY - r.top - r.height/2;
+      el.style.transform = `translate(${x*0.18}px, ${y*0.35}px)`;
+    });
+    el.addEventListener('mouseleave', ()=>{ el.style.transform='translate(0,0)'; });
+  });
+}
+
+/* scroll reveal */
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('in');
+      io.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.12, rootMargin:'0px 0px -60px 0px'});
+revealEls.forEach((el,i)=>{
+  el.style.transitionDelay = (i%4)*0.06 + 's';
+  io.observe(el);
+});
+
+/* hero background text drifting on scroll */
+const heroBgText = document.getElementById('heroBgText');
+window.addEventListener('scroll', ()=>{
+  const y = window.scrollY;
+  if(y < window.innerHeight){
+    heroBgText.style.transform = `translate(-50%, calc(-50% + ${y*0.15}px))`;
+  }
+});
+
+/* generic media slider (used for product gallery + hamper gallery) */
+function initSlider(root){
+  if(!root) return;
+  const slides = root.querySelectorAll('.gallery-slide');
+  const dots = root.querySelectorAll('.gallery-dots button');
+  const prev = root.querySelector('.gallery-prev');
+  const next = root.querySelector('.gallery-next');
+  let i = 0;
+  function show(n){
+    i = (n + slides.length) % slides.length;
+    slides.forEach((s,idx)=>s.classList.toggle('active', idx===i));
+    dots.forEach((d,idx)=>d.classList.toggle('active', idx===i));
+  }
+  dots.forEach(d=>d.addEventListener('click', ()=>show(parseInt(d.dataset.i,10))));
+  if(prev) prev.addEventListener('click', ()=>show(i-1));
+  if(next) next.addEventListener('click', ()=>show(i+1));
+}
+initSlider(document.getElementById('galleryV1'));
+initSlider(document.getElementById('galleryV2'));
+initSlider(document.getElementById('hamperGallery'));
+
+/* variant tab switching */
+(function(){
+  const tabs = document.querySelectorAll('.variant-tab');
+  const panels = document.querySelectorAll('.variant-panel');
+  const label = document.getElementById('variantLabel');
+  const names = {v1:'Deadline Tight Print', v2:'Code More Print'};
+  tabs.forEach(tab=>{
+    tab.addEventListener('click', ()=>{
+      const v = tab.dataset.variant;
+      tabs.forEach(t=>t.classList.toggle('active', t===tab));
+      panels.forEach(p=>{
+        const active = p.dataset.variant === v;
+        p.classList.toggle('active', active);
+        p.querySelectorAll('video').forEach(vid=>{
+          if(active){ vid.play().catch(()=>{}); } else { vid.pause(); }
+        });
+      });
+      if(label) label.textContent = names[v] || '';
+    });
+  });
+})();
+
+/* hero carousel — auto-advancing, subtle, no arrows */
+(function(){
+  const root = document.getElementById('heroCarousel');
+  if(!root) return;
+  const slides = root.querySelectorAll('.gallery-slide');
+  const dots = root.querySelectorAll('.gallery-dots button');
+  let i = 0, timer;
+  function show(n){
+    i = (n + slides.length) % slides.length;
+    slides.forEach((s,idx)=>s.classList.toggle('active', idx===i));
+    dots.forEach((d,idx)=>d.classList.toggle('active', idx===i));
+  }
+  dots.forEach(d=>d.addEventListener('click', ()=>{ show(parseInt(d.dataset.i,10)); resetTimer(); }));
+  function resetTimer(){
+    clearInterval(timer);
+    timer = setInterval(()=>show(i+1), 4500);
+  }
+  resetTimer();
+})();
+
+/* nature & craft video slider */
+(function(){
+  const root = document.getElementById('craftSlider');
+  if(!root) return;
+  const slides = root.querySelectorAll('.craft-slide');
+  const dots = root.querySelectorAll('.craft-dots button');
+  let i = 0, timer;
+  function show(n){
+    i = (n + slides.length) % slides.length;
+    slides.forEach((s,idx)=>s.classList.toggle('active', idx===i));
+    dots.forEach((d,idx)=>d.classList.toggle('active', idx===i));
+  }
+  dots.forEach(d=>d.addEventListener('click', ()=>{ show(parseInt(d.dataset.i,10)); resetTimer(); }));
+  function resetTimer(){
+    clearInterval(timer);
+    timer = setInterval(()=>show(i+1), 7000);
+  }
+  resetTimer();
+})();
+
+/* mobile menu (simple toggle -> smooth scroll links list) */
+document.getElementById('hamBtn').addEventListener('click', ()=>{
+  const links = document.querySelector('.nav-links');
+  const open = links.style.display === 'flex';
+  links.style.display = open ? 'none' : 'flex';
+  links.style.cssText += open ? '' : 'position:fixed;top:70px;left:0;right:0;background:var(--cream);flex-direction:column;padding:26px 32px;gap:22px;border-bottom:1px solid rgba(42,38,33,.1);z-index:899;';
+});
+
+/* newsletter — submits to Formspree so signups land in email automatically.
+   Note: this requires the page to be hosted (http/https), not opened as a
+   local file — browsers block cross-site requests from file:// pages. */
+(function(){
+  const form = document.getElementById('newsletterForm');
+  if(!form) return;
+  const emailEl = document.getElementById('nlEmail');
+  const submitBtn = document.getElementById('nlSubmit');
+  const note = document.getElementById('nlNote');
+  const isLocalFile = window.location.protocol === 'file:';
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const email = emailEl.value.trim();
+    if(!email) return;
+
+    if(isLocalFile){
+      submitBtn.textContent = 'Thank you!';
+      note.textContent = "You're on the list — this will email automatically once the page is hosted online.";
+      form.reset();
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Subscribing…';
+    fetch('https://formspree.io/f/xwvganav', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    })
+    .then(res => {
+      if(!res.ok) throw new Error('Formspree error ' + res.status);
+      submitBtn.textContent = 'Thank you!';
+      note.textContent = "You're on the list — welcome to Jutik.";
+    })
+    .catch(err => {
+      console.error('Jutik newsletter signup failed:', err);
+      submitBtn.textContent = 'Try again';
+      submitBtn.disabled = false;
+      note.textContent = "Something went wrong — please try again in a moment.";
+    })
+    .finally(()=>{ form.reset(); });
+  });
+})();
+</script>
+
+</body>
+</html>
